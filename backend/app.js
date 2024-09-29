@@ -13,7 +13,7 @@ env.config();
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // React frontend's URL
+    origin: "https://secrets-crud-app-hzkt.onrender.com", // React frontend's URL
     credentials: true, // Allow cookies/sessions to be sent
   })
 );
