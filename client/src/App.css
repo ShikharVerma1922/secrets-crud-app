@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #5a5a5a;
+}
+
+body,
+html {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the body takes full height of the viewport */
+}
+
+main {
+  flex: 1; /* Allow the main content to grow and fill the space */
+}
+
+/* If you're using flexbox layout in your app */
+.container,
+.container-fluid {
+  max-width: 100%;
+}
+
+form {
+  width: 400px;
+  margin-top: 5%;
+}
+
+.sticky-card {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 60px; /* Adjust based on your navbar height */
+  z-index: 1020; /* Ensure it stays above other content */
+}
+
+.logout-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: gray;
+}
+
+.logout-btn:hover {
+  color: white;
+}
+
+.btn {
+  border-radius: 25px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #6200ea;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #3700b3;
+  transform: scale(1.05);
+}
+
+.btn-success {
+  background-color: #25d366;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #1ebea1;
+  transform: scale(1.05);
+}
+
+.form-control {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #6200ea;
+  box-shadow: 0 0 5px rgba(98, 0, 234, 0.5);
+}
+
+.text-danger {
+  font-weight: bold;
+  color: #d9534f;
+  font-size: 0.9em;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+/* .card:hover {
+  transform: translateY(-5px);
+} */
+
+.like_dislike:hover {
+  transform: translateY(-5px);
+  color: black;
+}
+
+.login-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f7f7; /* Background color of the container */
+}
+.post-btn-width {
+  width: 500px;
+}
+
+.post-tile-width {
+  width: 60%;
+}
+
+.transparent-dropdown {
+  background-color: transparent;
+  border: none;
+  color: inherit; /* Ensures text color remains visible */
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.social-icons a {
+  font-size: 24px; /* Adjust size as needed */
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #007bff; /* Change hover color as needed */
+}
+
+.dropdown-menu {
+  background-color: #343a40; /* Dark background color */
+}
+
+.dropdown-item {
+  color: gray; /* White text color */
+}
+
+.dropdown-item:hover {
+  background-color: #343a40; /* Slightly lighter shade for hover */
+  color: #ffffff; /* White text color on hover */
+}
+
+.dropdown-divider {
+  border-color: #6c757d; /* Change the divider color to match the dark theme */
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+/* Slide-up animation for modal */
+.bottom-slide-modal {
+  position: fixed;
+  left: 46%;
+  bottom: 0;
+  top: 5%;
+  max-height: 100%;
+  width: 90%; /* Set width as needed */
+  overflow: hidden;
+  border-radius: 10px; /* Add rounding for the corners */
+  background-color: white; /* Ensure it's visible */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+}
+
+/* Set a fixed height and overflow for the modal body */
+.bottom-slide-modal .modal-body {
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  overflow: hidden;
+  padding-right: 10px;
+}
+
+.comments-section {
+  flex-grow: 1; /* Allow this section to grow */
+  overflow-y: auto; /* Enable scrolling */
+  padding-bottom: 60px;
+}
+
+/* Fixed input area at the bottom */
+.fixed-input-area {
+  position: sticky;
+  bottom: 20px;
+  background-color: white; /* Match modal background */
+  border-top: solid gray 1px;
+}
+
+.bottom-slide-modal .modal-content {
+  border: none; /* Remove the border from the modal */
+  border-radius: 0; /* Optional: Remove border radius for a flat look */
+  border-top: solid gray 1px;
+}
+
+/* Remove border from the modal header */
+.bottom-slide-modal .modal-header {
+  padding-bottom: 0;
+}
+
+/* Slide-up and slide-down animations */
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+}
+
+/* Apply animations to the modal */
+.bottom-slide-modal.show {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+.bottom-slide-modal.hide {
+  animation: slideDown 0.5s ease-out forwards;
+}
+
+/* .navbar-nav .active {
+  text-decoration: underline;
+} */
+
+@media only screen and (max-width: 600px) {
+  form {
+    /* max-width: 400px; */
+    width: max-content;
+    /* min-width: 200px; */
+  }
+  .post-btn-width {
+    width: 90%;
+  }
+
+  .post-tile-width {
+    width: 100%;
+  }
+}
