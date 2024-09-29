@@ -26,7 +26,7 @@ const UserBookmarks = () => {
     const fetchBookmarks = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/users/${userId}/bookmarks`,
+          `https://secrets-server-fgfd.onrender.com/users/${userId}/bookmarks`,
           {
             method: "GET",
             credentials: "include",

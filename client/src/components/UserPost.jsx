@@ -65,8 +65,8 @@ const UserPosts = ({ newPost, allPost }) => {
       try {
         const response = await fetch(
           allPost
-            ? `http://localhost:3000/all-posts/${order}`
-            : `http://localhost:3000/posts/${userId}`,
+            ? `https://secrets-server-fgfd.onrender.com/all-posts/${order}`
+            : `https://secrets-server-fgfd.onrender.com/posts/${userId}`,
           {
             method: "GET",
             credentials: "include",

@@ -35,7 +35,7 @@ const AccountPage = ({ setIsAuthenticated }) => {
   const fetchUserStats = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/user/stats/${userId}`
+        `https://secrets-server-fgfd.onrender.com/user/stats/${userId}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch user stats");
@@ -51,10 +51,13 @@ const AccountPage = ({ setIsAuthenticated }) => {
 
   const fetchUserData = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/user/${userId}`, {
-        method: "GET",
-        credentials: "include",
-      });
+      const response = await fetch(
+        `https://secrets-server-fgfd.onrender.com/user/${userId}`,
+        {
+          method: "GET",
+          credentials: "include",
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to fetch data");
@@ -96,13 +99,16 @@ const AccountPage = ({ setIsAuthenticated }) => {
 
     if (isConfirmed) {
       try {
-        const response = await fetch(`http://localhost:3000/delete/${userId}`, {
-          method: "DELETE",
-          credentials: "include",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const response = await fetch(
+          `https://secrets-server-fgfd.onrender.com/delete/${userId}`,
+          {
+            method: "DELETE",
+            credentials: "include",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
 
         if (response.ok) {
           setMessage("Your account has been deleted.");
@@ -136,7 +142,7 @@ const AccountPage = ({ setIsAuthenticated }) => {
     if (validateAnonymousName(anonymousName)) {
       try {
         const response = await fetch(
-          `http://localhost:3000/user/${userId}/anonymous-name`,
+          `https://secrets-server-fgfd.onrender.com/user/${userId}/anonymous-name`,
           {
             method: "PUT",
             credentials: "include",

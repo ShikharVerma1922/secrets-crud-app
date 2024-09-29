@@ -11,7 +11,7 @@ const LikeDislikeButton = ({ postId, onLikesUpdated }) => {
   // Fetch likes/dislikes data for the post
   const fetchLikesDislikes = async () => {
     const response = await fetch(
-      `http://localhost:3000/posts/${postId}/likes_dislikes`
+      `https://secrets-server-fgfd.onrender.com/posts/${postId}/likes_dislikes`
     );
     const data = await response.json();
     setLikes(data.likes);
@@ -22,7 +22,7 @@ const LikeDislikeButton = ({ postId, onLikesUpdated }) => {
   // Fetch user's reaction on mount
   const fetchUserReaction = async () => {
     const response = await fetch(
-      `http://localhost:3000/posts/${postId}/reaction`,
+      `https://secrets-server-fgfd.onrender.com/posts/${postId}/reaction`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -47,7 +47,7 @@ const LikeDislikeButton = ({ postId, onLikesUpdated }) => {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/posts/${postId}/like_dislike`,
+        `https://secrets-server-fgfd.onrender.com/posts/${postId}/like_dislike`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

@@ -10,7 +10,7 @@ const Login = ({ setIsAuthenticated }) => {
   const handleLogout = async () => {
     try {
       await axios.post(
-        "http://localhost:3000/logout",
+        "https://secrets-server-fgfd.onrender.com/logout",
         {},
         { withCredentials: true }
       );

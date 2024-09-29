@@ -12,14 +12,17 @@ const AddPost = ({ closeModal, setShowSuccess }) => {
       console.log(content);
       const userId = localStorage.getItem("userId");
 
-      const response = await fetch("http://localhost:3000/post-secret", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ user_id: userId, content: content.trim() }),
-        credentials: "include",
-      });
+      const response = await fetch(
+        "https://secrets-server-fgfd.onrender.com/post-secret",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ user_id: userId, content: content.trim() }),
+          credentials: "include",
+        }
+      );
       const data = await response.json();
 
       if (response.ok) {

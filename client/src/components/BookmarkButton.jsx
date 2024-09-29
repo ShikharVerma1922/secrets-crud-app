@@ -10,7 +10,7 @@ const BookmarkButton = ({ postId, onBookmarksUpdated }) => {
   const checkIfBookmarked = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/bookmarks/${postId}/${userId}`,
+        `https://secrets-server-fgfd.onrender.com/bookmarks/${postId}/${userId}`,
         {
           method: "GET",
           credentials: "include",
@@ -31,7 +31,7 @@ const BookmarkButton = ({ postId, onBookmarksUpdated }) => {
   const fetchBookmarkCount = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/posts/${postId}/bookmarks/count`,
+        `https://secrets-server-fgfd.onrender.com/posts/${postId}/bookmarks/count`,
         {
           method: "GET",
           credentials: "include",
@@ -52,7 +52,7 @@ const BookmarkButton = ({ postId, onBookmarksUpdated }) => {
 
   const handleBookmark = async () => {
     try {
-      const response = await fetch("http://localhost:3000/bookmarks", {
+      const response = await fetch("https://secrets-server-fgfd.onrender.com/bookmarks", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -78,7 +78,7 @@ const BookmarkButton = ({ postId, onBookmarksUpdated }) => {
   const handleRemoveBookmark = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/bookmarks/${postId}/${userId}`,
+        `https://secrets-server-fgfd.onrender.com/bookmarks/${postId}/${userId}`,
         {
           method: "DELETE",
           credentials: "include",

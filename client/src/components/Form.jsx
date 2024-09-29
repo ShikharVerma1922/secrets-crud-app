@@ -65,8 +65,8 @@ const Form = (props) => {
       axios
         .post(
           props.register
-            ? "http://localhost:3000/register"
-            : "http://localhost:3000/login",
+            ? "https://secrets-server-fgfd.onrender.com/register"
+            : "https://secrets-server-fgfd.onrender.com/login",
           props.register
             ? {
                 username: username,

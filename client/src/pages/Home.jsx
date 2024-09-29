@@ -12,9 +12,12 @@ const Home = () => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const response = await fetch("http://localhost:3000/users", {
-          credentials: "include", // Include cookies (session ID)
-        });
+        const response = await fetch(
+          "https://secrets-server-fgfd.onrender.com/users",
+          {
+            credentials: "include", // Include cookies (session ID)
+          }
+        );
         if (response.ok) {
           setIsAuthenticated(true);
         } else {

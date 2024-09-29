@@ -47,7 +47,7 @@ const CommentsButton = ({ post, onCommentsUpdated }) => {
       const fetchComments = async () => {
         try {
           const response = await fetch(
-            `http://localhost:3000/posts/${post.id}/comments`,
+            `https://secrets-server-fgfd.onrender.com/posts/${post.id}/comments`,
             {
               method: "GET",
               credentials: "include",
@@ -73,7 +73,7 @@ const CommentsButton = ({ post, onCommentsUpdated }) => {
   const fetchCommentCount = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/posts/${post.id}/comments/count`,
+        `https://secrets-server-fgfd.onrender.com/posts/${post.id}/comments/count`,
         {
           method: "GET",
           credentials: "include",
@@ -98,7 +98,7 @@ const CommentsButton = ({ post, onCommentsUpdated }) => {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/posts/${post.id}/comments`,
+        `https://secrets-server-fgfd.onrender.com/posts/${post.id}/comments`,
         {
           method: "POST",
           credentials: "include",
