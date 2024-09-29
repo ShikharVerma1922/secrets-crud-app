@@ -6,6 +6,9 @@ import { Strategy } from "passport-local";
 import session from "express-session";
 import cors from "cors";
 import env from "dotenv";
+import connectPgSimple from "connect-pg-simple";
+
+const PgSession = connectPgSimple(session);
 
 const port = 3000;
 const app = express();
@@ -19,16 +22,34 @@ app.use(
 );
 app.use(express.json());
 
+// app.use(
+//   session({
+//     secret: "TOPSECRETWORD",
+//     resave: false,
+//     saveUninitialized: false,
+//     cookie: {
+//       secure: false, // Set to true if using HTTPS
+//       httpOnly: true, // Helps to mitigate XSS attacks
+//       sameSite: "lax", // CSRF protection
+//     },
+//   })
+// );
+
 app.use(
   session({
+    store: new PgSession({
+      conObject: {
+        user: process.env.PG_USER,
+        host: process.env.PG_HOST,
+        database: process.env.PG_DATABASE,
+        password: process.env.PG_PASSWORD,
+        port: process.env.PG_PORT,
+      },
+    }),
     secret: "TOPSECRETWORD",
     resave: false,
     saveUninitialized: false,
-    cookie: {
-      secure: false, // Set to true if using HTTPS
-      httpOnly: true, // Helps to mitigate XSS attacks
-      sameSite: "lax", // CSRF protection
-    },
+    cookie: { secure: true }, // Set to true in production when using HTTPS
   })
 );
 
@@ -48,6 +69,7 @@ const db = new pg.Client({
   database: process.env.PG_DATABASE,
   password: process.env.PG_PASSWORD,
   port: process.env.PG_PORT,
+  ssl: { rejectUnauthorized: false },
 });
 
 db.connect();
