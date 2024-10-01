@@ -16,7 +16,7 @@ env.config();
 
 app.use(
   cors({
-    origin: ["https://secrets-crud-app-hzkt.onrender.com"],
+    origin: "https://secrets-crud-app-hzkt.onrender.com",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
