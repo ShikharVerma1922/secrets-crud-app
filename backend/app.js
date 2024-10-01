@@ -16,8 +16,9 @@ env.config();
 
 app.use(
   cors({
-    origin: "https://secrets-crud-app-hzkt.onrender.com", // React frontend's URL
-    credentials: true, // Allow cookies/sessions to be sent
+    origin: ["https://secrets-crud-app-hzkt.onrender.com"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
   })
 );
 app.use(express.json());
