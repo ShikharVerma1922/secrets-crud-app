@@ -16,7 +16,10 @@ env.config();
 
 app.use(
   cors({
-    origin: "https://secrets-crud-app-ui.vercel.app/",
+    origin: [
+      "https://secrets-crud-app-l2lm5su8i-shikhars-projects-e14b33c5.vercel.app", // your current frontend URL
+      "https://secrets-crud-app-ui.vercel.app", // if you need to keep this as well
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
