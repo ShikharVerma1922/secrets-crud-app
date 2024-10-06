@@ -52,7 +52,7 @@ const AccountPage = ({ setIsAuthenticated }) => {
   const fetchUserData = async () => {
     try {
       const response = await fetch(
-        `https://secrets-server-fgfd.onrender.com/user/${userId}`,
+        `https://secrets-crud-app-api.vercel.app/user/${userId}`,
         {
           method: "GET",
           credentials: "include",
@@ -100,7 +100,7 @@ const AccountPage = ({ setIsAuthenticated }) => {
     if (isConfirmed) {
       try {
         const response = await fetch(
-          `https://secrets-server-fgfd.onrender.com/delete/${userId}`,
+          `https://secrets-crud-app-api.vercel.app/delete/${userId}`,
           {
             method: "DELETE",
             credentials: "include",
@@ -142,7 +142,7 @@ const AccountPage = ({ setIsAuthenticated }) => {
     if (validateAnonymousName(anonymousName)) {
       try {
         const response = await fetch(
-          `https://secrets-server-fgfd.onrender.com/user/${userId}/anonymous-name`,
+          `https://secrets-crud-app-api.vercel.app/user/${userId}/anonymous-name`,
           {
             method: "PUT",
             credentials: "include",

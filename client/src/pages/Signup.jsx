@@ -9,7 +9,7 @@ const Signup = ({ setIsAuthenticated }) => {
   const handleLogout = async () => {
     try {
       await axios.post(
-        "https://secrets-server-fgfd.onrender.com/logout",
+        "https://secrets-crud-app-api.vercel.app/logout",
         {},
         { withCredentials: true }
       );

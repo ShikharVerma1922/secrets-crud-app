@@ -65,8 +65,8 @@ const Form = (props) => {
       axios
         .post(
           props.register
-            ? "https://secrets-server-fgfd.onrender.com/register"
-            : "https://secrets-server-fgfd.onrender.com/login",
+            ? "https://secrets-crud-app-api.vercel.app/register"
+            : "https://secrets-crud-app-api.vercel.app/login",
           props.register
             ? {
                 username: username,

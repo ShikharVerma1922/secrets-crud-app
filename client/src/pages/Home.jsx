@@ -13,7 +13,7 @@ const Home = () => {
     const checkAuth = async () => {
       try {
         const response = await fetch(
-          "https://secrets-server-fgfd.onrender.com/users",
+          "https://secrets-crud-app-api.vercel.app/users",
           {
             credentials: "include", // Include cookies (session ID)
           }

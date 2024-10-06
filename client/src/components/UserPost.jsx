@@ -65,8 +65,8 @@ const UserPosts = ({ newPost, allPost }) => {
       try {
         const response = await fetch(
           allPost
-            ? `https://secrets-server-fgfd.onrender.com/all-posts/${order}`
-            : `https://secrets-server-fgfd.onrender.com/posts/${userId}`,
+            ? `https://secrets-crud-app-api.vercel.app/all-posts/${order}`
+            : `https://secrets-crud-app-api.vercel.app/posts/${userId}`,
           {
             method: "GET",
             credentials: "include",

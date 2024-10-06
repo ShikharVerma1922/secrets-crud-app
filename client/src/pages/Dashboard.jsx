@@ -38,7 +38,7 @@ function Dashboard() {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const response = await fetch("https://secrets-server-fgfd.onrender.com/users", {
+        const response = await fetch("https://secrets-crud-app-api.vercel.app/users", {
           credentials: "include", // Include cookies (session ID)
         });
         if (response.ok) {

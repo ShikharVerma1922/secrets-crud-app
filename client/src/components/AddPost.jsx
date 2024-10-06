@@ -13,7 +13,7 @@ const AddPost = ({ closeModal, setShowSuccess }) => {
       const userId = localStorage.getItem("userId");
 
       const response = await fetch(
-        "https://secrets-server-fgfd.onrender.com/post-secret",
+        "https://secrets-crud-app-api.vercel.app/post-secret",
         {
           method: "POST",
           headers: {

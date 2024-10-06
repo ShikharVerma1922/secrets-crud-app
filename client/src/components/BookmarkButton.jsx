@@ -10,7 +10,7 @@ const BookmarkButton = ({ postId, onBookmarksUpdated }) => {
   const checkIfBookmarked = async () => {
     try {
       const response = await fetch(
-        `https://secrets-server-fgfd.onrender.com/bookmarks/${postId}/${userId}`,
+        `https://secrets-crud-app-api.vercel.app/bookmarks/${postId}/${userId}`,
         {
           method: "GET",
           credentials: "include",
@@ -31,7 +31,7 @@ const BookmarkButton = ({ postId, onBookmarksUpdated }) => {
   const fetchBookmarkCount = async () => {
     try {
       const response = await fetch(
-        `https://secrets-server-fgfd.onrender.com/posts/${postId}/bookmarks/count`,
+        `https://secrets-crud-app-api.vercel.app/posts/${postId}/bookmarks/count`,
         {
           method: "GET",
           credentials: "include",
@@ -52,17 +52,20 @@ const BookmarkButton = ({ postId, onBookmarksUpdated }) => {
 
   const handleBookmark = async () => {
     try {
-      const response = await fetch("https://secrets-server-fgfd.onrender.com/bookmarks", {
-        method: "POST",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          postId,
-          userId: localStorage.getItem("userId"), // Assuming userId is stored in localStorage
-        }),
-      });
+      const response = await fetch(
+        "https://secrets-crud-app-api.vercel.app/bookmarks",
+        {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            postId,
+            userId: localStorage.getItem("userId"), // Assuming userId is stored in localStorage
+          }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to bookmark the post");
@@ -78,7 +81,7 @@ const BookmarkButton = ({ postId, onBookmarksUpdated }) => {
   const handleRemoveBookmark = async () => {
     try {
       const response = await fetch(
-        `https://secrets-server-fgfd.onrender.com/bookmarks/${postId}/${userId}`,
+        `https://secrets-crud-app-api.vercel.app/bookmarks/${postId}/${userId}`,
         {
           method: "DELETE",
           credentials: "include",

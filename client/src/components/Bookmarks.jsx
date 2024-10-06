@@ -26,7 +26,7 @@ const UserBookmarks = () => {
     const fetchBookmarks = async () => {
       try {
         const response = await fetch(
-          `https://secrets-server-fgfd.onrender.com/users/${userId}/bookmarks`,
+          `https://secrets-crud-app-api.vercel.app/users/${userId}/bookmarks`,
           {
             method: "GET",
             credentials: "include",
